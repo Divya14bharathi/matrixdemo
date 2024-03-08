@@ -15,14 +15,14 @@ jobs:
     strategy:
       matrix:
         version: [10]
-        names: ['test1' ,'test2']
+        names: ['test1','test2','test3]
     # condition     
     # if: ${{ github.ref == 'refs/heads/dev' }}  
     if: github.repository == 'Divya14bharathi/matrixdemo' 
     runs-on: ubuntu-latest
     env:
       Day: monday
-      name: shubham
+      name: Divya
       company: acccenture
     steps:
       - name: varibles
