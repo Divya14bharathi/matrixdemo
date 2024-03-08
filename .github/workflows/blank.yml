@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
- 
 name: CI
  
 # Controls when the workflow will run
@@ -17,12 +15,14 @@ jobs:
     strategy:
       matrix:
         version: [10]
-        names: ['test1' ,'test2','test3','test4','test5']
-        stage: ['test1' ,'test2','test3','test4','test5']
+        names: ['test1' ,'test2']
+    # condition     
+    #if: ${{ github.ref == 'refs/heads/main' }}  
+    if: github.repository == 'Shubham-Bawa/matrix-demo' 
     runs-on: ubuntu-latest
     env:
       Day: monday
-      name: Divya
+      name: shubham
       company: acccenture
     steps:
       - name: varibles
@@ -31,5 +31,3 @@ jobs:
         run: echo ${{matrix.version}} 
       - name: test  
         run: echo ${{matrix.names}} 
-      - name: stage 
-        run: echo ${{matrix.stage}}
